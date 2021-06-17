@@ -53,7 +53,7 @@ function sendMigrateDIDTX(payloadStr,nonce,index,payloads, callback) {
     cdata  = contract.methods.operationDID(payloadStr).encodeABI();
     console.log("#### payloadStr.length ", payloadStr.length)
 
-    tx = {data: cdata, to: contract.options.address, from: acc.address, gasPrice:90000000000000}
+    tx = {data: cdata, to: contract.options.address, from: acc.address, gasPrice:1000000000000}
     tx.nonce = nonce;
 
     // web3.eth.estimateGas(tx).then((gas)=> {
