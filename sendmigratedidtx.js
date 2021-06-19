@@ -72,7 +72,7 @@ acc = web3.eth.accounts.decrypt(account, "did contract account password");
 //async
 //module.exports =
 function sendMigrateDIDTX(payloadStr,nonce,index,payloads, callback) {
-    cdata  = contract.methods.operationDID(payloadStr).encodeABI();
+    cdata  = contract.methods.publishDidTransaction(payloadStr).encodeABI();
     console.log("#### payloadStr.length ", payloadStr.length)
 
     tx = {data: cdata, to: contract.options.address, from: acc.address, gasPrice:1000000000000}
