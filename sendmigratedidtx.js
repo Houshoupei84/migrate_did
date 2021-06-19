@@ -4,39 +4,60 @@ web3 = new Web3("http://127.0.0.1:20646");
 //var Transaction = require('ethereumjs-tx').Transaction;
 var Tx = require('ethereumjs-tx').Transaction;
 
+// contract = new web3.eth.Contract([
+//     {
+//         "inputs": [
+//             {
+//                 "internalType": "string",
+//                 "name": "didDocument",
+//                 "type": "string"
+//             }
+//         ],
+//         "name": "operationDID",
+//         "outputs": [],
+//         "stateMutability": "nonpayable",
+//         "type": "function"
+//     },
+//     {
+//         "inputs": [],
+//         "stateMutability": "nonpayable",
+//         "type": "constructor"
+//     },
+//     {
+//         "inputs": [],
+//         "name": "leftGas",
+//         "outputs": [
+//             {
+//                 "internalType": "uint256",
+//                 "name": "",
+//                 "type": "uint256"
+//             }
+//         ],
+//         "stateMutability": "view",
+//         "type": "function"
+//     }
+// ]);
 contract = new web3.eth.Contract([
-    {
-        "inputs": [
-            {
-                "internalType": "string",
-                "name": "didDocument",
-                "type": "string"
-            }
-        ],
-        "name": "operationDID",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
     {
         "inputs": [],
         "stateMutability": "nonpayable",
         "type": "constructor"
     },
     {
-        "inputs": [],
-        "name": "leftGas",
-        "outputs": [
+        "inputs": [
             {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
+                "internalType": "string",
+                "name": "data",
+                "type": "string"
             }
         ],
-        "stateMutability": "view",
+        "name": "publishDidTransaction",
+        "outputs": [],
+        "stateMutability": "nonpayable",
         "type": "function"
     }
 ]);
+
 //did合约地址
 contract.options.address = "0x46E5936a9bAA167b3368F4197eDce746A66f7a7a";
 
